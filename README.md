@@ -6,6 +6,9 @@
 
 # Project 1: Image Filtering and Hybrid Images
 
+## Update
+* Add the report template (index.md) to the 'results' folder.
+
 ## Brief
 * Due: Oct. 19
 * Required files: results/index.md, and code/
