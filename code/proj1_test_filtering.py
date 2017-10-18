@@ -41,7 +41,7 @@ blur_filter = blur_filter.astype(np.float) / np.sum(blur_filter);  # making the 
 blur_image = my_imfilter(test_image, blur_filter)
 plt.figure('Box filter')
 plt.imshow(normalize(blur_image))
-plt.imsave(main_path+'/results/blur_image11111111.png', normalize(blur_image + 0.5), 'quality', 95);
+plt.imsave(main_path+'/results/blur_image.png', normalize(blur_image + 0.5), 'quality', 95);
 
 ''' Large blur '''
 #This blur would be slow to do directly, so we instead use the fact that
@@ -50,7 +50,7 @@ large_2d_blur_filter = gauss2D(shape=(25,25), sigma = 10)
 large_blur_image = my_imfilter(test_image, large_2d_blur_filter);
 plt.figure('Gauss filter')
 plt.imshow(normalize(large_blur_image))
-plt.imsave(main_path+'/results/large_blur_image111111111.png', normalize(large_blur_image + 0.5), 'quality', 95);
+plt.imsave(main_path+'/results/large_blur_image.png', normalize(large_blur_image + 0.5), 'quality', 95);
 
 
 ''' Oriented filter (Sobel Operator) '''
@@ -60,7 +60,7 @@ sobel_image = my_imfilter(test_image, sobel_filter);
 #0.5 added because the output image is centered around zero otherwise and mostly black
 plt.figure('Sobel filter')
 plt.imshow(normalize(sobel_image+0.5))
-plt.imsave(main_path+'/results/sobel_image11111111111.png', normalize(sobel_image + 0.5), 'quality', 95);
+plt.imsave(main_path+'/results/sobel_image.png', normalize(sobel_image + 0.5), 'quality', 95);
 
 
 ''' High pass filter (Discrete Laplacian) '''
@@ -70,7 +70,7 @@ laplacian_image = my_imfilter(test_image, laplacian_filter);
 #0.5 added because the output image is centered around zero otherwise and mostly black
 plt.figure('Laplacian filter')
 plt.imshow(normalize(laplacian_image+0.5))
-plt.imsave(main_path+'/results/laplacian_image1111111111.png', normalize(laplacian_image + 0.5), 'quality', 95);
+plt.imsave(main_path+'/results/laplacian_image.png', normalize(laplacian_image + 0.5), 'quality', 95);
 
 
 ''' High pass "filter" alternative '''
@@ -78,6 +78,6 @@ high_pass_image = test_image - blur_image; #simply subtract the low frequency co
 
 plt.figure('High pass filter')
 plt.imshow(normalize(high_pass_image+0.5))
-plt.imsave(main_path+'/results/high_pass_image111111111111.png', normalize(high_pass_image + 0.5), 'quality', 95);
+plt.imsave(main_path+'/results/high_pass_image.png', normalize(high_pass_image + 0.5), 'quality', 95);
 plt.show()
 print('done')
