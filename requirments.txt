@@ -1,0 +1,8 @@
+1. fork from main version to my own page
+2. 'git clone' on terminal
+3. git add --all 
+4. git commit -a
+   it might ask to add some comments to this commit and ctrl+X to leave
+5. git push (if up-to-date, there is hint command to config -- simple...)
+   and push again!!!
+6. uploading bar running means that it is writitng to the old version on github
