@@ -15,9 +15,9 @@ import os
 ''' Setup '''
 # read images and convert to floating point format
 main_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-image1 = mpimg.imread(main_path + '/data/dog.bmp')
-image2 = mpimg.imread(main_path + '/data/cat.bmp')
-image1 = image1.astype(np.single)/255
+image1 = mpimg.imread(main_path + '/data/bird.bmp')
+image2 = mpimg.imread(main_path + '/data/plane.bmp')
+image1 = image1.astype(np.single)/255 
 image2 = image2.astype(np.single)/255
 
 # Several additional test cases are provided for you, but feel free to make
@@ -25,6 +25,7 @@ image2 = image2.astype(np.single)/255
 # Photoshop). The hybrid images will differ depending on which image you
 # assign as image1 (which will provide the low frequencies) and which image
 # you asign as image2 (which will provide the high frequencies)
+
 
 ''' Filtering and Hybrid Image construction '''
 cutoff_frequency = 7 # This is the standard deviation, in pixels, of the 
@@ -43,7 +44,7 @@ gaussian_filter = gauss2D(shape=(cutoff_frequency*4+1,cutoff_frequency*4+1), sig
 # Remove the high frequencies from image1 by blurring it. The amount of #
 # blur that works best will vary with different image pairs             #
 #########################################################################
-#low_frequencies = 
+low_frequencies = my_imfilter(image1, gaussian_filter);
 
 
 ############################################################################
@@ -51,26 +52,26 @@ gaussian_filter = gauss2D(shape=(cutoff_frequency*4+1,cutoff_frequency*4+1), sig
 # subtract a blurred version of image2 from the original version of image2.#
 # This will give you an image centered at zero with negative values.       #
 ############################################################################
-#high_frequencies = 
+high_frequencies = image2 - my_imfilter(image2, gaussian_filter)
 
 
 ############################################################################
 # Combine the high frequencies and low frequencies                         #
 ############################################################################
-#hybrid_image = 
+hybrid_image = low_frequencies+high_frequencies
 
 
 
 ''' Visualize and save outputs '''
 plt.figure(1)
-plt.imshow(low_frequencies)
+plt.imshow(normalize(low_frequencies))
 plt.figure(2)
-plt.imshow(high_frequencies+0.5)
+plt.imshow(normalize(high_frequencies+0.5))
 vis = vis_hybrid_image(hybrid_image)
 plt.figure(3)
-plt.imshow(vis)
-plt.imsave(main_path+'/results/low_frequencies.png', low_frequencies, 'quality', 95)
-plt.imsave(main_path+'/results/high_frequencies.png', high_frequencies + 0.5, 'quality', 95)
-plt.imsave(main_path+'/results/hybrid_image.png', hybrid_image, 'quality', 95)
-plt.imsave(main_path+'/results/hybrid_image_scales.png', vis, 'quality', 95)
+plt.imshow(normalize(vis))
+plt.imsave(main_path+'/results/low_frequencies_mouse_bear.png', normalize(low_frequencies), 'quality', 95)
+plt.imsave(main_path+'/results/high_frequencies_mouse_bear.png', normalize(high_frequencies+0.5), 'quality', 95)
+plt.imsave(main_path+'/results/hybrid_image_mouse_bear.png', normalize(hybrid_image), 'quality', 95)
+plt.imsave(main_path+'/results/hybrid_image_scales_mouse_bear.png', normalize(vis), 'quality', 95)
 plt.show()
