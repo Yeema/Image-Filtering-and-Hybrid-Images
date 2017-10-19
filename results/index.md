@@ -1,4 +1,4 @@
-# Your Name <span style="color:red">(yout cs id)</span>
+# Your Name <span style="color:red">(your cs id)</span>
 賴怡惠 103011105
 # Project 1 / Image Filtering and Hybrid Images
 
@@ -22,7 +22,17 @@ The project is related to
 	```
 		hybrid_image = low_frequencies+high_frequencies
 	```
-	* item
+	* most tricky and easily forget:
+	> use normalize function which has provided by TA in ../code
+	```
+		plt.imshow(normalize(low_frequencies))
+		plt.imshow(normalize(high_frequencies+0.5))
+		plt.imshow(normalize(vis))
+		plt.imsave(main_path+'/results/low_frequencies_mouse_bear.png', normalize(low_frequencies), 'quality', 95)
+		plt.imsave(main_path+'/results/high_frequencies_mouse_bear.png', normalize(high_frequencies+0.5), 'quality', 95)
+		plt.imsave(main_path+'/results/hybrid_image_mouse_bear.png', normalize(hybrid_image), 'quality', 95)
+		plt.imsave(main_path+'/results/hybrid_image_scales_mouse_bear.png', normalize(vis), 'quality', 95)
+	```
 2. my_filter.py
 
 ```
