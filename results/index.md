@@ -47,10 +47,10 @@ The project is related to
     	flt_dim2=flt_dim[1]
 	```
 	* Deside the added amount of length and width ofpadding array befor convolution in order to deal with the edge problem:
-	> the added amount of length and width is according to the filter's size
-	> I imagine that the way how the filter moves to do convolution with image.
-	> Therefore, I pad half of the filter length to the upper and lower side respectively,
-	> and half of the filter width to the left and right side of respectively. 
+	> The added amount of length and width is according to the filter's size.
+	> First, I imagine that the way how the filter moves to do convolution with image.
+	> Therefore, I pad half of the filter length to the upper and lower side 
+	> and half of the filter width to the left and right side respectively. 
 	```
 		pad_dim1=int((flt_dim1-1)/2)
 		pad_dim2=int((flt_dim2-1)/2)
@@ -61,12 +61,17 @@ The project is related to
 		pad_mat=np.zeros((img_dim1+2*pad_dim1,img_dim2+2*pad_dim2,3))
 	```
 	* Assign the image pixels to the center of padding array:
-	> I pad half of the filter length to the upper and lower and side half of the filter width to the left and right side respectively,
-	> so the actual position of image is 
-	> staring from pad_dim1 and img_dim2
-	> end with these plus the size of actual image
+	> I padded half of the filter length to the upper and lower and side half of the filter width to the left and right side respectively, so the actual position of image is staring from pad_dim1 and img_dim2 and ending with these plus the size of actual image
 	```
 		pad_mat[pad_dim1: img_dim1 + pad_dim1, pad_dim2: img_dim2 + pad_dim2] = image
+	```
+	* Do convolution:
+	> Fiter is moving from the most upper left pixel and to the most lower-right pixel in the "actual image region." At each time, the filter pad it self on the padded image and the corresponded pixels multiple each other and then sum them up.
+	```
+		for d in range(len(image[0][0])):
+			for i in range(len(image)):
+			    for j in range(len(image[0])):
+				output[i][j][d] = sum(sum(np.multiply(imfilter,pad_mat[i:i+flt_dim1,j:j+flt_dim2,d])))
 	```
 ## Installation
 * Other required packages.
