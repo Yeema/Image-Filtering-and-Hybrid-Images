@@ -37,7 +37,7 @@ The project is related to
 	<img src="report_supplement/error1.PNG"  width="50%"/>
 2. my_filter.py
 	* Get the size (length、width) of the image and filter first:
-	> I use shape supported by numpy to get these information
+	> I use "shape" supported by numpy to get these information
 	```
 		im_dim=image.shape
     	flt_dim=imfilter.shape
@@ -45,6 +45,28 @@ The project is related to
     	img_dim2=im_dim[1]
     	flt_dim1=flt_dim[0]
     	flt_dim2=flt_dim[1]
+	```
+	* Deside the added amount of length and width ofpadding array befor convolution in order to deal with the edge problem:
+	> the added amount of length and width is according to the filter's size
+	> I imagine that the way how the filter moves to do convolution with image.
+	> Therefore, I pad half of the filter length to the upper and lower side respectively,
+	> and half of the filter width to the left and right side of respectively. 
+	```
+		pad_dim1=int((flt_dim1-1)/2)
+		pad_dim2=int((flt_dim2-1)/2)
+	```
+	* Initialize the padding array to be zeros:
+	> zeros function is supported by numpy
+	```
+		pad_mat=np.zeros((img_dim1+2*pad_dim1,img_dim2+2*pad_dim2,3))
+	```
+	* Assign the image pixels to the center of padding array:
+	> I pad half of the filter length to the upper and lower and side half of the filter width to the left and right side respectively,
+	> so the actual position of image is 
+	> staring from pad_dim1 and img_dim2
+	> end with these plus the size of actual image
+	```
+		pad_mat[pad_dim1: img_dim1 + pad_dim1, pad_dim2: img_dim2 + pad_dim2] = image
 	```
 ## Installation
 * Other required packages.
