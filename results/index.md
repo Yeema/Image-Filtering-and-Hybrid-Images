@@ -4,8 +4,10 @@
 
 ## Overview
 The project is related to 
-> The main idea of implementing my_filter.py is doing convolution for each pixel.
-> Numpy provides many useful compuational functions which helps simplify my code and make it more readable.  
+1. implement my_filter.py to do onvolution
+2. understand the mechanism of realizing "hybrid" images: high and low frequencies of images
+3. get familiar to utilize Numpy which helps simplify my code and make it more readable
+4. read instructions concerning the specification which there are many details hidden in
 
 ## Implementation
 1. proj1.py
