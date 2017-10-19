@@ -8,10 +8,22 @@ The project is related to
 > Numpy provides many useful compuational functions which helps simplify my code and make it more readable.  
 
 ## Implementation
-1. One
+1. proj1.py
+	* follow the steps in the comment:
+	> Remove the high frequencies from image1 by blurring it. The amount of blur that works best will vary with different image pairs
+	```
+		low_frequencies = my_imfilter(image1, gaussian_filter)
+	```
+	> remove the low frequencies from image2. The easiest way to do this is to subtract a blurred version of image2 from the original version of image2. This will give you an image centered at zero with negative values.
+	```
+		high_frequencies = image2 - my_imfilter(image2, gaussian_filter)
+	```
+	> Combine the high frequencies and low frequencies
+	```
+		hybrid_image = low_frequencies+high_frequencies
+	```
 	* item
-	* item
-2. Two
+2. my_filter.py
 
 ```
 Code highlights
