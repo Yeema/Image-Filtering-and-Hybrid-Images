@@ -18,10 +18,12 @@ Code highlights
 ```
 
 ## Installation
+<p>
 * Other required packages.
-import numpy as np in my_filter.py
+import numpy as np in my_filter.py<br/>
 * How to compile from source?
-open a terminal in the folder homework1 and type "python proj1.py" in the command line 
+open a terminal in the folder homework1 and type "python proj1.py" in the command line <br/>
+</p>
 ### Results
 
 <table border=1>
