@@ -37,13 +37,14 @@ The project is related to
 	<img src="report_supplement/error1.PNG"  width="50%"/>
 2. my_filter.py
 	* Get the size (length、width) of the image and filter first:
+	> I use shape supported by numpy to get these information
 	```
 		im_dim=image.shape
-    		flt_dim=imfilter.shape
-    		img_dim1=im_dim[0]
-    		img_dim2=im_dim[1]
-    		flt_dim1=flt_dim[0]
-    		flt_dim2=flt_dim[1]
+    	flt_dim=imfilter.shape
+    	img_dim1=im_dim[0]
+    	img_dim2=im_dim[1]
+    	flt_dim1=flt_dim[0]
+    	flt_dim2=flt_dim[1]
 	```
 ## Installation
 * Other required packages.
