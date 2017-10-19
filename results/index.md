@@ -19,13 +19,10 @@ Code highlights
 
 ## Installation
 * Other required packages.
-<p>
-&nbsp&nbspimport numpy as np in my_filter.py<br/>
-</p>
+import numpy as np in my_filter.py
 * How to compile from source?
-<p>
-&nbsp&nbspopen a terminal in the folder homework1 and type "python proj1.py" in the command line <br/>
-</p>
+open a terminal in the folder homework1 and type "python proj1.py" in the command line 
+
 ### Results
 
 <table border=1>
