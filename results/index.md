@@ -28,11 +28,12 @@ The project is related to
 		plt.imshow(normalize(low_frequencies))
 		plt.imshow(normalize(high_frequencies+0.5))
 		plt.imshow(normalize(vis))
-		plt.imsave(main_path+'/results/low_frequencies_mouse_bear.png', <span style="color:red">normalize</span>(low_frequencies), 'quality', 95)
+		plt.imsave(main_path+'/results/low_frequencies_mouse_bear.png', normalize(low_frequencies), 'quality', 95)
 		plt.imsave(main_path+'/results/high_frequencies_mouse_bear.png', normalize(high_frequencies+0.5), 'quality', 95)
 		plt.imsave(main_path+'/results/hybrid_image_mouse_bear.png', normalize(hybrid_image), 'quality', 95)
 		plt.imsave(main_path+'/results/hybrid_image_scales_mouse_bear.png', normalize(vis), 'quality', 95)
 	```
+	> if I don't use the function before showing or saving images
 2. my_filter.py
 
 ```
