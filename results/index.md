@@ -33,13 +33,18 @@ The project is related to
 		plt.imsave(main_path+'/results/hybrid_image_mouse_bear.png', normalize(hybrid_image), 'quality', 95)
 		plt.imsave(main_path+'/results/hybrid_image_scales_mouse_bear.png', normalize(vis), 'quality', 95)
 	```
-	> if I don't use the function before showing or saving images
+	> if I don't use the function before showing or saving images, there is some flow on the image
+	<img src="report_supplement/error1.PNG"  width="50%"/>
 2. my_filter.py
-
-```
-Code highlights
-```
-
+	* Get the size (length、width) of the image and filter first:
+	```
+		im_dim=image.shape
+    		flt_dim=imfilter.shape
+    		img_dim1=im_dim[0]
+    		img_dim2=im_dim[1]
+    		flt_dim1=flt_dim[0]
+    		flt_dim2=flt_dim[1]
+	```
 ## Installation
 * Other required packages.
 import numpy as np in my_filter.py
